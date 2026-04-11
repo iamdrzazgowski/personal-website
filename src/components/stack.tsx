@@ -15,7 +15,7 @@ export default function Stack() {
                         {stack.items.map((item) => (
                             <span
                                 key={item}
-                                className="text-[11.5px] border border-border/70 px-2.5 py-0.5 rounded-sm text-foreground hover:bg-foreground hover:text-background transition-colors duration-150 cursor-default"
+                                className="text-[11.5px] border border-border px-2.5 py-0.5 rounded-md text-foreground hover:bg-foreground hover:text-background transition-colors duration-150 cursor-default"
                             >
                                 {item}
                             </span>
