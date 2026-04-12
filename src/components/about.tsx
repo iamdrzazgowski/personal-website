@@ -1,4 +1,5 @@
 import { links } from "@/data/links";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export default function About() {
@@ -18,11 +19,12 @@ export default function About() {
                     <Link
                         key={link.label}
                         href={link.href}
-                        className="text-[12.5px] text-muted-foreground border-b border-transparent hover:text-foreground hover:border-foreground transition-colors duration-150"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[12.5px] text-muted-foreground border-b border-transparent hover:text-foreground hover:border-foreground transition-colors duration-150 group"
                     >
-                        {link.label} ↗
+                        {link.label}
+                        <ArrowUpRight className="w-3 h-3 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </Link>
                 ))}
             </div>

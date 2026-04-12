@@ -1,4 +1,5 @@
 import { projects } from "@/data/projects";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Projects() {
@@ -13,9 +14,13 @@ export default function Projects() {
                     className="flex flex-col h-full p-4 border border-border rounded transition-colors duration-200 group hover:bg-foreground"
                 >
                     <div className="flex items-baseline justify-between mb-[7px]">
-                        <span className="text-[17px] font-light tracking-[-0.01em] text-foreground group-hover:text-background transition-colors duration-200">
-                            {project.name}
-                        </span>
+                        <div className="flex items-center gap-1">
+                            <span className="text-[17px] font-light tracking-[-0.01em] text-foreground group-hover:text-background transition-colors duration-200">
+                                {project.name}
+                            </span>
+                            <ArrowUpRight className="w-3.5 h-3.5 stroke-current text-muted-foreground transition-all duration-200 group-hover:text-background group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                        </div>
+
                         <span className="text-[11.5px] text-muted-foreground group-hover:text-background/70 transition-colors duration-200">
                             {project.year}
                         </span>
