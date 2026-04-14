@@ -10,13 +10,23 @@ export default function About() {
 
             <div className='flex flex-col gap-3.5'>
                 <p className='text-[14px] leading-[1.85]'>
-                    Frontend Developer with a focus on React, Next.js and modern
-                    web development practices. Passionate about building clean,
-                    efficient and user-friendly digital products.
+                    Full Stack Developer focused on building modern, scalable
+                    web applications using React, Next.js, and contemporary
+                    backend technologies. I enjoy creating performant,
+                    maintainable, and user-friendly solutions that deliver real
+                    value.
                 </p>
                 <p className='text-[14px] leading-[1.85]'>
-                    Actively looking for new opportunities and freelance
-                    collaborations.
+                    I have a strong attention to detail and a problem-solving
+                    mindset, which helps me turn complex requirements into clean
+                    and efficient implementations.
+                </p>
+                <p className='text-[14px] leading-[1.85]'>
+                    Continuously improving my skills and staying up to date with
+                    the latest trends in web development.
+                </p>
+                <p className='text-[14px] leading-[1.85]'>
+                    Open to new opportunities and freelance collaborations.
                 </p>
                 <div className='flex gap-4 flex-wrap mt-0.5'>
                     {links.map((link) => (

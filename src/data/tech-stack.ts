@@ -52,6 +52,7 @@ export const stackData: StackCategory[] = [
             'Algorithms & Data Structures',
             'C++',
             'Python',
+            'Java',
         ],
     },
 ];
