@@ -37,4 +37,18 @@ export const projects: Project[] = [
         tags: ['JavaScript', 'React', 'Supabase', 'Vite', 'React Router'],
         url: 'https://github.com/iamdrzazgowski/taskflow-task-manager',
     },
+    {
+        name: 'mRolnik',
+        description:
+            'Modern mobile app helping farmers manage resources, tasks, and field data in one place.',
+        tags: ['Kotlin', 'Jetpack Compose', 'Supabase'],
+        url: 'https://github.com/iamdrzazgowski/mRolnik',
+    },
+    {
+        name: 'Matdron',
+        description:
+            'Drone photography and videography website with services, portfolio, and contact.',
+        tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+        url: 'https://matdron.pl/',
+    },
 ];

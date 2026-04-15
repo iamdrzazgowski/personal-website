@@ -8,7 +8,7 @@ export default function Projects() {
         <>
             <SectionSeparator label='projects' />
 
-            <div className='grid grid-cols-2 gap-3 max-[420px]:grid-cols-1'>
+            <div className='grid grid-cols-2 gap-3 max-[520px]:grid-cols-1'>
                 {projects.map((project) => (
                     <Link
                         key={project.name}
