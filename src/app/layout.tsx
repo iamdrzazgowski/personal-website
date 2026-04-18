@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'Full Stack Developer | Adrian Drzazgowski',
+    title: 'Frontend Developer | Adrian Drzazgowski',
     description:
-        'Full Stack Developer based in Lublin, Poland. I build fast, scalable and user-focused web applications using React, Next.js and modern backend technologies.',
+        'Frontend Developer based in Lublin, Poland. I build fast, scalable and user-focused web applications using React, Next.js.',
 };
 
 export default function RootLayout({

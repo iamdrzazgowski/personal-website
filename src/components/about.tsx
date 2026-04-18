@@ -10,10 +10,9 @@ export default function About() {
 
             <div className='flex flex-col gap-3.5'>
                 <p className='text-[14px] leading-[1.85]'>
-                    Full Stack Developer focused on building modern web
-                    applications using React, Next.js, and backend technologies.
-                    I enjoy creating simple, efficient, and user-friendly
-                    solutions.
+                    Frontend Developer focused on building modern web
+                    applications using React, Next.js.I enjoy creating simple,
+                    efficient, and user-friendly solutions.
                 </p>
                 <p className='text-[14px] leading-[1.85]'>
                     I have a strong attention to detail and a problem-solving

@@ -5,7 +5,7 @@ export default function Header() {
                 Adrian Drzazgowski
             </h1>
             <p className='text-[12.5px] text-muted-foreground mt-1.5 tracking-[0.04em]'>
-                Full Stack Developer · Lublin, Poland
+                Frontend Developer · Lublin, Poland
             </p>
         </header>
     );
