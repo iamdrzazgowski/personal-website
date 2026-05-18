@@ -11,7 +11,7 @@ export const projects: Project[] = [
         name: 'Realtime Chat Application',
 
         description: 'Real-time chat with WebSockets, rooms, and JWT auth.',
-        tags: ['React', 'Node.js', 'Express', 'Socket.IO', 'JWT', 'PostgreSQL'],
+        tags: ['React', 'Node.js', 'Express', 'Socket.IO', 'JWT', 'Prisma ORM', 'PostgreSQL'],
         url: 'https://github.com/iamdrzazgowski/react-realtime-chat',
     },
     {
@@ -24,7 +24,7 @@ export const projects: Project[] = [
             'TypeScript',
             'Node.js',
             'PostgreSQL',
-            'Prisma',
+            'Prisma ORM',
             'Better Auth',
         ],
         url: 'https://github.com/iamdrzazgowski/portfolio-tracker',
