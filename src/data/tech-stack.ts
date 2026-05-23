@@ -26,7 +26,7 @@ export const stackData: StackCategory[] = [
             'Express',
             'Socket.IO',
             'PostgreSQL',
-            'MongoDB'
+            'MongoDB',
             'Prisma ORM',
             'Supabase',
             'Better Auth',
