@@ -8,47 +8,62 @@ interface Project {
 
 export const projects: Project[] = [
     {
-        name: 'Realtime Chat Application',
+        name: "Realtime Chat Application",
 
-        description: 'Real-time chat with WebSockets, rooms, and JWT auth.',
-        tags: ['React', 'Node.js', 'Express', 'Socket.IO', 'JWT', 'Prisma ORM', 'PostgreSQL'],
-        url: 'https://github.com/iamdrzazgowski/react-realtime-chat',
-    },
-    {
-        name: 'Portfolio Tracker',
-
-        description:
-            'App for tracking investment portfolios with charts and API data.',
+        description: "Real-time chat with WebSockets, rooms, and JWT auth.",
         tags: [
-            'Next.js',
-            'TypeScript',
-            'Node.js',
-            'PostgreSQL',
-            'Prisma ORM',
-            'Better Auth',
+            "React",
+            "Node.js",
+            "Express",
+            "Socket.IO",
+            "JWT",
+            "Prisma ORM",
+            "PostgreSQL",
         ],
-        url: 'https://github.com/iamdrzazgowski/portfolio-tracker',
+        url: "https://github.com/iamdrzazgowski/react-realtime-chat",
     },
     {
-        name: 'TaskFlow',
+        name: "Portfolio Tracker",
 
         description:
-            'Task manager with roles, permissions, and team workflows.',
-        tags: ['JavaScript', 'React', 'Supabase', 'Vite', 'React Router'],
-        url: 'https://github.com/iamdrzazgowski/taskflow-task-manager',
+            "App for tracking investment portfolios with charts and API data.",
+        tags: [
+            "Next.js",
+            "TypeScript",
+            "Node.js",
+            "PostgreSQL",
+            "Prisma ORM",
+            "Better Auth",
+        ],
+        url: "https://github.com/iamdrzazgowski/portfolio-tracker",
     },
     {
-        name: 'mRolnik',
+        name: "TaskFlow",
+
         description:
-            'Modern mobile app helping farmers manage resources, tasks, and field data in one place.',
-        tags: ['Kotlin', 'Jetpack Compose', 'Supabase'],
-        url: 'https://github.com/iamdrzazgowski/mRolnik',
+            "Task manager with roles, permissions, and team workflows.",
+        tags: ["JavaScript", "React", "Supabase", "Vite", "React Router"],
+        url: "https://github.com/iamdrzazgowski/taskflow-task-manager",
     },
     {
-        name: 'Matdron',
+        name: "mRolnik",
         description:
-            'Drone photography and videography website with services, portfolio, and contact.',
-        tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-        url: 'https://matdron.pl/',
+            "Modern mobile app helping farmers manage resources, tasks, and field data in one place.",
+        tags: ["Kotlin", "Jetpack Compose", "Supabase"],
+        url: "https://github.com/iamdrzazgowski/mRolnik",
+    },
+    {
+        name: "Resume Analyzer",
+        description:
+            "AI-powered tool for analyzing CVs and matching them to job descriptions.",
+        tags: ["Next.js", "TypeScript", "FastAPI", "AI", "Gemini API"],
+        url: "https://github.com/iamdrzazgowski/resume-analyzer",
+    },
+    {
+        name: "Matdron",
+        description:
+            "Drone photography and videography website with services, portfolio, and contact.",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+        url: "https://matdron.pl/",
     },
 ];
