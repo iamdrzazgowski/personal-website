@@ -56,7 +56,15 @@ export const projects: Project[] = [
         name: "Resume Analyzer",
         description:
             "AI-powered tool for analyzing CVs and matching them to job descriptions.",
-        tags: ["Next.js", "TypeScript", "FastAPI", "AI", "Gemini API"],
+        tags: [
+            "Next.js",
+            "TypeScript",
+            "Zustand",
+            "React Query",
+            "FastAPI",
+            "AI",
+            "Gemini API",
+        ],
         url: "https://github.com/iamdrzazgowski/resume-analyzer",
     },
     {
