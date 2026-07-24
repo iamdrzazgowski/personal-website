@@ -61,17 +61,10 @@ export const projects: Project[] = [
             "TypeScript",
             "Zustand",
             "React Query",
-            "FastAPI",
+            "Zod",
             "AI",
             "Gemini API",
         ],
         url: "https://github.com/iamdrzazgowski/resume-analyzer",
-    },
-    {
-        name: "Matdron",
-        description:
-            "Drone photography and videography website with services, portfolio, and contact.",
-        tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-        url: "https://matdron.pl/",
     },
 ];
