@@ -8,8 +8,22 @@ interface Project {
 
 export const projects: Project[] = [
     {
+        name: "Resume Analyzer",
+        description:
+            "AI-powered tool for analyzing CVs and matching them to job descriptions.",
+        tags: [
+            "Next.js",
+            "TypeScript",
+            "Zustand",
+            "React Query",
+            "Zod",
+            "AI",
+            "Gemini API",
+        ],
+        url: "https://github.com/iamdrzazgowski/resume-analyzer",
+    },
+    {
         name: "Realtime Chat Application",
-
         description: "Real-time chat with WebSockets, rooms, and JWT auth.",
         tags: [
             "React",
@@ -24,7 +38,6 @@ export const projects: Project[] = [
     },
     {
         name: "Portfolio Tracker",
-
         description:
             "App for tracking investment portfolios with charts and API data.",
         tags: [
@@ -38,33 +51,10 @@ export const projects: Project[] = [
         url: "https://github.com/iamdrzazgowski/portfolio-tracker",
     },
     {
-        name: "TaskFlow",
-
-        description:
-            "Task manager with roles, permissions, and team workflows.",
-        tags: ["JavaScript", "React", "Supabase", "Vite", "React Router"],
-        url: "https://github.com/iamdrzazgowski/taskflow-task-manager",
-    },
-    {
         name: "mRolnik",
         description:
             "Modern mobile app helping farmers manage resources, tasks, and field data in one place.",
         tags: ["Kotlin", "Jetpack Compose", "Supabase"],
         url: "https://github.com/iamdrzazgowski/mRolnik",
-    },
-    {
-        name: "Resume Analyzer",
-        description:
-            "AI-powered tool for analyzing CVs and matching them to job descriptions.",
-        tags: [
-            "Next.js",
-            "TypeScript",
-            "Zustand",
-            "React Query",
-            "Zod",
-            "AI",
-            "Gemini API",
-        ],
-        url: "https://github.com/iamdrzazgowski/resume-analyzer",
     },
 ];
