@@ -1,31 +1,30 @@
-import { stackData } from '@/data/tech-stack';
-import SectionSeparator from './section-separator';
+import Section from "@/components/ui/section";
+import { stackData } from "@/data/tech-stack";
 
-export default function Stack() {
-    return (
-        <>
-            <SectionSeparator label='tech stack' />
+interface StackProps {
+  index: number;
+}
 
-            <div className='flex flex-col gap-3.5'>
-                {stackData.map((stack) => (
-                    <div
-                        key={stack.category}
-                        className='grid grid-cols-[78px_1fr] gap-2 items-start'>
-                        <span className='text-[11.5px] text-muted-foreground pt-[3px]'>
-                            {stack.category}
-                        </span>
-                        <div className='flex flex-wrap gap-[5px]'>
-                            {stack.items.map((item) => (
-                                <span
-                                    key={item}
-                                    className='text-[11.5px] border border-border px-2.5 py-0.5 rounded-md text-foreground hover:bg-foreground hover:text-background transition-colors duration-150 cursor-default'>
-                                    {item}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </>
-    );
+export default function Stack({ index }: StackProps) {
+  return (
+    <Section index={index} label="Stack">
+      <div className="flex flex-col">
+        {stackData.map((stack, i) => (
+          <div
+            key={stack.category}
+            className={`flex flex-col gap-2 py-5 md:flex-row md:items-baseline md:gap-8 ${
+              i !== 0 ? "border-t border-(--subtle-border)" : ""
+            }`}
+          >
+            <span className="shrink-0 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground md:w-28">
+              {String(i + 1).padStart(2, "0")} / {stack.category}
+            </span>
+            <p className="flex-1 text-[14px] uppercase leading-[1.8] tracking-[0.01em]">
+              {stack.items.join(" / ")}
+            </p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
 }

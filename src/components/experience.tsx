@@ -1,45 +1,59 @@
-import { experiences } from '@/data/experience';
-import Link from 'next/link';
-import SectionSeparator from './section-separator';
+import Link from "next/link";
+import Section from "@/components/ui/section";
+import { experiences } from "@/data/experience";
 
-export default function Experience() {
-    if (experiences.length === 0) return null;
+interface ExperienceProps {
+  index: number;
+}
 
-    return (
-        <>
-            <SectionSeparator label='experience' />
-            <div className='flex flex-col gap-0'>
-                {experiences.map((exp, index) => (
-                    <div
-                        key={exp.role}
-                        className={`pb-[18px] ${index !== experiences.length - 1 ? 'border-b border-border/50' : ''} ${index !== 0 ? 'pt-[18px]' : ''}`}>
-                        <p className='text-[11.5px] text-muted-foreground mb-1.5 tracking-[0.03em]'>
-                            {exp.period}
-                        </p>
-                        <div className='flex items-baseline flex-wrap gap-[5px]'>
-                            <span className='text-[14.5px] font-medium'>
-                                {exp.role}
-                            </span>
-                            {exp.companyUrl ? (
-                                <Link
-                                    href={exp.companyUrl}
-                                    className='text-[12.5px] text-muted-foreground hover:text-foreground transition-colors'
-                                    target='_blank'
-                                    rel='noopener noreferrer'>
-                                    @ {exp.company} ↗
-                                </Link>
-                            ) : (
-                                <span className='text-[12.5px] text-muted-foreground'>
-                                    @ {exp.company}
-                                </span>
-                            )}
-                        </div>
-                        <p className='text-[13px] text-muted-foreground mt-1.5 leading-[1.75]'>
-                            {exp.description}
-                        </p>
-                    </div>
-                ))}
+export default function Experience({ index }: ExperienceProps) {
+  if (experiences.length === 0) return null;
+
+  return (
+    <Section index={index} label="Experience">
+      <div className="flex flex-col">
+        {experiences.map((exp, i) => (
+          <div
+            key={exp.role}
+            className={`group flex flex-col gap-2 py-6 transition-[padding-inline] duration-200 hover:pl-2 md:flex-row md:items-baseline md:justify-between ${
+              i !== 0 ? "border-t border-(--subtle-border)" : ""
+            }`}
+          >
+            <div className="flex items-baseline gap-3">
+              <span className="font-mono text-[11px] text-muted-foreground">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <span className="font-display text-[18px] font-medium uppercase tracking-[-0.01em] md:text-[20px]">
+                    {exp.role}
+                  </span>
+                  {exp.companyUrl ? (
+                    <Link
+                      href={exp.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-[12px] text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      @ {exp.company} ↗
+                    </Link>
+                  ) : (
+                    <span className="font-mono text-[12px] text-muted-foreground">
+                      @ {exp.company}
+                    </span>
+                  )}
+                </div>
+                <p className="mt-1.5 max-w-[52ch] text-[13.5px] leading-[1.7] text-foreground/75">
+                  {exp.description}
+                </p>
+              </div>
             </div>
-        </>
-    );
+            <span className="shrink-0 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+              {exp.period}
+            </span>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
 }
