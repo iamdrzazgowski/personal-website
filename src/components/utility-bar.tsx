@@ -33,14 +33,17 @@ export default function UtilityBar() {
     <header className="flex items-center justify-between border-b border-border py-4 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
       <span>Portfolio / {clock?.year ?? "—"}</span>
       <div className="flex items-center gap-4">
-        <span className="flex items-center gap-2">
+        <span className="hidden items-center gap-2 md:flex">
           <span
             className="inline-block h-1.5 w-1.5 rounded-full bg-foreground"
             aria-hidden
           />
           Lublin, PL{clock ? ` — ${clock.time}` : ""}
         </span>
-        <span className="h-3 w-px bg-(--subtle-border)" aria-hidden />
+        <span
+          className="hidden h-3 w-px bg-(--subtle-border) md:inline-block"
+          aria-hidden
+        />
         <ThemeToggle />
       </div>
     </header>

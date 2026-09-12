@@ -37,7 +37,10 @@ export default function Projects({ index }: ProjectsProps) {
               </p>
             </div>
 
-            <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground md:pt-2 md:text-right">
+            <p
+              title={project.tags.join(" / ")}
+              className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground md:w-56 md:shrink-0 md:truncate md:pt-2 md:text-right"
+            >
               {project.tags.join(" / ")}
             </p>
           </Link>
