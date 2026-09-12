@@ -8,7 +8,11 @@
   --subtle-border: #d6d6d2;
   --scrollbar-thumb: #b8b6b0;
   --scrollbar-thumb-hover: #98968f;
+
   --grid-cell: 25vw;
+  --grid-line-opacity: 5%;
+  --grid-cross-opacity: 6%;
+
   color-scheme: light;
 }
 
@@ -20,6 +24,10 @@
   --subtle-border: #2e2d29;
   --scrollbar-thumb: #46443f;
   --scrollbar-thumb-hover: #5c5a54;
+
+  --grid-line-opacity: 4%;
+  --grid-cross-opacity: 5%;
+
   color-scheme: dark;
 }
 
@@ -38,13 +46,17 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+
     position: relative;
+
     transition:
       background-color 200ms ease,
       color 200ms ease;
   }
+
   a:focus-visible,
   button:focus-visible {
     outline: 2px solid var(--foreground);
@@ -52,50 +64,105 @@
   }
 }
 
-/* Fixed square-grid background: stays put while the page scrolls.
-   --grid-cell is sized so roughly 4 columns by 3 rows fit on screen. */
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
+/* Fixed square-grid background */
 body::before {
   content: "";
+
   position: fixed;
   inset: 0;
+
   z-index: -1;
   pointer-events: none;
+
   background-image:
     repeating-linear-gradient(
       to right,
-      color-mix(in srgb, var(--foreground) 18%, transparent) 0 1px,
+      color-mix(
+        in srgb,
+        var(--foreground) var(--grid-line-opacity),
+        transparent
+      )
+      0 1px,
       transparent 1px var(--grid-cell)
     ),
     repeating-linear-gradient(
       to bottom,
-      color-mix(in srgb, var(--foreground) 18%, transparent) 0 1px,
+      color-mix(
+        in srgb,
+        var(--foreground) var(--grid-line-opacity),
+        transparent
+      )
+      0 1px,
       transparent 1px var(--grid-cell)
     );
 }
 
-/* Small "+" marks at every grid intersection. */
+/* Small "+" marks at every grid intersection */
 body::after {
   content: "";
+
   position: fixed;
   inset: 0;
+
   z-index: -1;
   pointer-events: none;
-  background-color: color-mix(in srgb, var(--foreground) 20%, transparent);
+
+  background-color: color-mix(
+    in srgb,
+    var(--foreground) var(--grid-cross-opacity),
+    transparent
+  );
+
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath d='M62.5 64H65.5M64 62.5V65.5' stroke='black' stroke-width='0.6' stroke-linecap='square'/%3E%3C/svg%3E");
+
   mask-repeat: repeat;
   mask-size: var(--grid-cell) var(--grid-cell);
-  mask-position: calc(var(--grid-cell) / -2) calc(var(--grid-cell) / -2);
+  mask-position:
+    calc(var(--grid-cell) / -2)
+    calc(var(--grid-cell) / -2);
+
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath d='M62.5 64H65.5M64 62.5V65.5' stroke='black' stroke-width='0.6' stroke-linecap='square'/%3E%3C/svg%3E");
+
   -webkit-mask-repeat: repeat;
   -webkit-mask-size: var(--grid-cell) var(--grid-cell);
-  -webkit-mask-position: calc(var(--grid-cell) / -2) calc(var(--grid-cell) / -2);
+  -webkit-mask-position:
+    calc(var(--grid-cell) / -2)
+    calc(var(--grid-cell) / -2);
 }
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  :root {
+    --grid-cell: 30vw;
+    --grid-line-opacity: 3%;
+    --grid-cross-opacity: 4%;
+  }
+
+  .dark {
+    --grid-line-opacity: 3%;
+    --grid-cross-opacity: 4%;
+  }
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
 
 html {
   scroll-behavior: smooth;
+
   /* Firefox */
   scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb) var(--background);
+  scrollbar-color:
+    var(--scrollbar-thumb)
+    var(--background);
 }
 
 /* Webkit (Chrome, Edge, Safari) */
@@ -116,14 +183,30 @@ html {
   background: var(--scrollbar-thumb-hover);
 }
 
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
 ::selection {
-  background: color-mix(in srgb, var(--foreground) 15%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--foreground) 15%,
+    transparent
+  );
 }
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
 
 .page {
   width: min(100% - 40px, 1400px);
   margin-inline: auto;
 }
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   *,
