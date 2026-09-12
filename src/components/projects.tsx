@@ -21,26 +21,25 @@ export default function Projects({ index }: ProjectsProps) {
               i !== 0 ? "border-t border-(--subtle-border)" : ""
             }`}
           >
-            <span className="font-mono text-[11px] text-muted-foreground md:pt-2">
-              {String(i + 1).padStart(2, "0")}
-            </span>
+            <div className="flex gap-3 md:max-w-[46%] md:gap-4">
+              <span className="w-6 shrink-0 font-mono text-[11px] text-muted-foreground md:pt-2">
+                {String(i + 1).padStart(2, "0")}
+              </span>
 
-            <div className="flex-1 md:max-w-[60%]">
-              <div className="flex items-baseline gap-3">
-                <h3 className="font-display text-[24px] font-medium uppercase tracking-[-0.02em] md:text-[32px]">
-                  {project.name}
-                </h3>
-                <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+              <div className="flex-1">
+                <div className="flex items-baseline gap-3">
+                  <h3 className="font-display text-[24px] font-medium uppercase tracking-[-0.02em] md:text-[32px]">
+                    {project.name}
+                  </h3>
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+                </div>
+                <p className="mt-2 max-w-[48ch] text-[14px] leading-[1.7] text-foreground/75">
+                  {project.description}
+                </p>
               </div>
-              <p className="mt-2 max-w-[48ch] text-[14px] leading-[1.7] text-foreground/75">
-                {project.description}
-              </p>
             </div>
 
-            <p
-              title={project.tags.join(" / ")}
-              className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground md:w-56 md:shrink-0 md:truncate md:pt-2 md:text-right"
-            >
+            <p className="pl-9 font-mono text-[11px] uppercase tracking-widest text-muted-foreground md:pl-0 md:pt-2 md:text-right">
               {project.tags.join(" / ")}
             </p>
           </Link>
