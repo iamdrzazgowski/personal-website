@@ -17,7 +17,7 @@ export default function Projects({ index }: ProjectsProps) {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group flex flex-col gap-3 py-8 transition-[padding-inline] duration-200 hover:pl-2 md:flex-row md:items-start md:justify-between md:gap-8 ${
+            className={`reveal group flex flex-col gap-3 py-8 transition-[padding-inline] duration-200 hover:pl-2 md:flex-row md:items-start md:justify-between md:gap-8 ${
               i !== 0 ? "border-t border-(--subtle-border)" : ""
             }`}
           >

@@ -12,7 +12,7 @@ export default function Stack({ index }: StackProps) {
         {stackData.map((stack, i) => (
           <div
             key={stack.category}
-            className={`flex flex-col gap-2 py-5 md:flex-row md:items-baseline md:gap-8 ${
+            className={`reveal flex flex-col gap-2 py-5 md:flex-row md:items-baseline md:gap-8 ${
               i !== 0 ? "border-t border-(--subtle-border)" : ""
             }`}
           >
