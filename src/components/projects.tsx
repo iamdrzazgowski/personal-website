@@ -27,12 +27,17 @@ export default function Projects({ index }: ProjectsProps) {
               </span>
 
               <div className="flex-1">
-                <div className="flex items-baseline gap-3">
-                  <h3 className="font-display text-[24px] font-medium uppercase tracking-[-0.02em] md:text-[32px]">
-                    {project.name}
-                  </h3>
-                  <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
-                </div>
+                  <div className="flex items-baseline gap-4">
+                    <div className="origin-left transition-transform duration-200 group-hover:scale-[1.08]">
+                      <div className="flex items-baseline gap-3">
+                        <h3 className="font-display text-[24px] font-medium uppercase tracking-[-0.02em] md:text-[32px]">
+                          {project.name}
+                        </h3>
+
+                        <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+                      </div>
+                    </div>
+                  </div>
                 <p className="mt-2 max-w-[48ch] text-[14px] leading-[1.7] text-foreground/75">
                   {project.description}
                 </p>

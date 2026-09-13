@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col gap-2 border-t border-border py-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground md:flex-row md:items-center md:justify-between">
       <span>© {year} Adrian Drzazgowski</span>
-      <span>Built with Next.js — No template</span>
+      <span>Built with Next.js</span>
     </footer>
   );
 }
