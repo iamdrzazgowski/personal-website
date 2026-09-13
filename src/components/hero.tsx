@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
 import { prefersReducedMotion } from "@/lib/motion";
+import { links } from "@/data/links";
 
 export default function Hero() {
   const rootRef = useRef<HTMLElement>(null);
@@ -44,9 +45,20 @@ export default function Hero() {
           I build fast, scalable and user-focused web applications using React,
           Next.js and TypeScript.
         </p>
-        <p className="whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-          Lublin / Poland
-        </p>
+
+        <div className="flex flex-wrap items-center gap-4 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="inline-block transition-colors duration-200 hover:text-foreground"
+            >
+              [{` ${link.label.toUpperCase()} `}]
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
