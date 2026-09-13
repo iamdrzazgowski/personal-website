@@ -9,7 +9,6 @@ export const stackData: StackCategory[] = [
     items: [
       "JavaScript",
       "TypeScript",
-      "HTML/CSS",
       "React",
       "Next.js",
       "Tailwind CSS",
