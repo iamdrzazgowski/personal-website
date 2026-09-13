@@ -31,7 +31,7 @@ export default function ThemeToggle() {
       aria-label={
         theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
       }
-      className="inline-block min-w-13 text-left transition-colors duration-200 hover:text-foreground"
+      className="inline-block min-w-13 text-left transition-colors duration-200 hover:text-foreground cursor-pointer"
     >
       [{theme === "dark" ? " Light " : " Dark "}]
     </button>
