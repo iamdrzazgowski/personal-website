@@ -1,27 +1,33 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-type Theme = "light" | "dark";
+import {
+  applyTheme,
+  getStoredTheme,
+  setStoredTheme,
+  type Theme,
+} from "@/lib/theme";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme | null>(null);
 
   useEffect(() => {
-    const initial = document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
-    setTheme(initial);
+    const stored = getStoredTheme();
+    setTheme(
+      stored ??
+        (document.documentElement.classList.contains("dark")
+          ? "dark"
+          : "light"),
+    );
   }, []);
 
-  useEffect(() => {
-    if (theme === null) return;
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    window.localStorage.setItem("theme", theme);
-  }, [theme]);
-
   const toggle = () => {
-    setTheme((current) => (current === "dark" ? "light" : "dark"));
+    // rerender-move-effect-to-event: DOM + storage writes happen in the
+    // event handler instead of a useEffect subscribed to `theme`.
+    const next: Theme = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    applyTheme(next);
+    setStoredTheme(next);
   };
 
   return (

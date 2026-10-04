@@ -8,6 +8,14 @@ interface Clock {
   year: number;
 }
 
+// js-cache-function-results: Intl.DateTimeFormat construction is expensive;
+// hoist to module level instead of rebuilding it on every tick.
+const warsawTimeFormatter = new Intl.DateTimeFormat("en-GB", {
+  hour: "2-digit",
+  minute: "2-digit",
+  timeZone: "Europe/Warsaw",
+});
+
 export default function UtilityBar() {
   const [clock, setClock] = useState<Clock | null>(null);
 
@@ -15,11 +23,7 @@ export default function UtilityBar() {
     const update = () => {
       const now = new Date();
       setClock({
-        time: new Intl.DateTimeFormat("en-GB", {
-          hour: "2-digit",
-          minute: "2-digit",
-          timeZone: "Europe/Warsaw",
-        }).format(now),
+        time: warsawTimeFormatter.format(now),
         year: now.getFullYear(),
       });
     };

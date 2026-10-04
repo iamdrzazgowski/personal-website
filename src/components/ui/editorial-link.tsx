@@ -22,7 +22,11 @@ export default function EditorialLink({
       className={`group inline-flex items-baseline gap-2 ${className ?? ""}`}
     >
       {children}
-      <ArrowUpRight className="w-[0.55em] h-[0.55em] shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+      {/* rendering-animate-svg-wrapper: transform the wrapper, not the SVG,
+          so the browser composites instead of re-rasterizing the icon. */}
+      <span className="inline-flex transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+        <ArrowUpRight className="w-[0.55em] h-[0.55em] shrink-0" aria-hidden />
+      </span>
     </Link>
   );
 }

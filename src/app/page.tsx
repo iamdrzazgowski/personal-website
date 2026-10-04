@@ -25,9 +25,10 @@ export default function Home() {
         <Hero />
         <Statement index={statementIndex} />
         <Stack index={stackIndex} />
-        {hasExperience && experienceIndex !== null && (
+        {/* rendering-conditional-render: explicit ternary instead of &&. */}
+        {hasExperience && experienceIndex !== null ? (
           <Experience index={experienceIndex} />
-        )}
+        ) : null}
         <Projects index={projectsIndex} />
         <Contact index={contactIndex} />
       </main>

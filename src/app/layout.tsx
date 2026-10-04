@@ -34,7 +34,7 @@ export default function RootLayout({
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: static inline script, no user input, needed to avoid a theme flash before paint
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+            __html: `(function(){try{var s=localStorage.getItem('theme:v1')||localStorage.getItem('theme');var d=s?s==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d){document.documentElement.classList.add('dark');}}catch(e){}})();`,
           }}
         />
       </head>
