@@ -37,18 +37,19 @@ export const projects: Project[] = [
     url: "https://github.com/iamdrzazgowski/react-realtime-chat",
   },
   {
-    name: "Portfolio Tracker",
+    name: "Nordwell",
     description:
       "App for tracking investment portfolios with charts and API data.",
     tags: [
       "Next.js",
       "TypeScript",
-      "Node.js",
+      "React Hook Form",
+      "Zod",
       "PostgreSQL",
       "Prisma ORM",
       "Better Auth",
     ],
-    url: "https://github.com/iamdrzazgowski/portfolio-tracker",
+    url: "https://github.com/iamdrzazgowski/nordwell",
   },
   {
     name: "mRolnik",
