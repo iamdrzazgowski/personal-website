@@ -31,7 +31,7 @@ export default function Hero() {
       className="flex min-h-dvh flex-col justify-between py-14 md:py-20"
     >
       <p className="reveal font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-        Frontend Developer
+        Fullstack Developer
       </p>
 
       <h1 className="reveal font-display font-medium uppercase text-[clamp(3.5rem,13vw,10.5rem)] leading-[0.84] tracking-[-0.045em]">
